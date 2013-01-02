@@ -1,0 +1,18 @@
+{% extends "tmpl/base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+{% endif %}
+
+<form method="post" action="/cnx/logout/">
+{% csrf_token %}
+
+<p>Confirmez votre deconnexion </p>
+
+<input type="submit" name="VALID" value="OK" />
+<input type="submit" name="VALID" value="Annulation" />
+</form>
+
+{% endblock %}
+

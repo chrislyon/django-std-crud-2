@@ -1,0 +1,27 @@
+{% extends "tmpl/base.html" %}
+
+{% block content %}
+
+<form id="base_form" method="post" >
+
+    {% csrf_token %}
+
+	<h1>Êtes-vous sûr de vouloir supprimer cette URL ?</h1>
+
+    <fieldset>
+    <p> {{ obj }}</p>
+    </fieldset>
+	
+	<fieldset>
+		<table>
+		<tr><td>
+			<button type="submit" name="VALID" value="VALID"/> Validation </button>
+		</td> <td>
+			<button type="submit" name="VALID" value="ANNUL"/> Annulation </button>
+		</td></tr>
+		</table>
+	</fieldset>
+
+</form>
+
+{% endblock %}

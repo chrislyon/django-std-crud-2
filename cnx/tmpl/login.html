@@ -1,0 +1,42 @@
+{% extends "tmpl/base.html" %}
+
+{% block header %}
+	<p></p>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/style/form_style.css" />
+<link rel="stylesheet" href="/static/style/login_style.css" />
+{% endblock %}
+
+{% block logo %}
+	<div />
+{% endblock %}
+
+{% block nav %}
+	<div />
+{% endblock %}
+
+
+{% block content %}
+
+	<form id="base_form"  method="post" action="/cnx/login/">
+		{% csrf_token %}
+		<fieldset>
+		<legend> Authentification nécessaire</legend>
+			<ol>
+				{{ form.as_ul }}
+			</ol>
+		</fieldset>
+
+		<fieldset>
+		<input type="submit" value="Connexion" />
+		</fieldset>
+	</form>
+
+{% endblock %}
+
+{% block footer %}
+	<div />
+{% endblock %}
+

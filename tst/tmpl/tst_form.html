@@ -1,0 +1,39 @@
+{% extends "tmpl/base.html" %}
+
+{% block nav %}
+<p />
+{% endblock %}
+
+{% block content %}
+
+    <form id="base_form" method="post">
+    {% csrf_token %}
+    <fieldset>
+    <legend>
+		{% if TITRE_PAGE %}
+			{{ TITRE_PAGE }}
+		{% else %}
+			"TITRE DE LA PAGE"
+		{% endif %}
+	</legend>
+    <ol>
+    {{ form.as_ul }}
+    </ol>
+    </fieldset>
+
+    <div id="error">
+        {{ field.errors }}
+    </div>
+
+    <fieldset>
+    <table>
+    <tr><td>
+    <button type="submit" name="VALID" value="VALID"/> Validation </button>
+    </td> <td>
+    <button type="submit" name="VALID" value="ANNUL"/> Annulation </button>
+    </td></tr>
+    </table>
+    </fieldset>
+    </form>
+
+{% endblock %}

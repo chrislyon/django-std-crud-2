@@ -1,0 +1,12 @@
+{% extends "tmpl/base.html" %}
+
+{% block content %}
+
+	{% if USER %}
+		<pre> Welcome {{ USER }} </pre>
+	{% else %}
+		<pre> Welcome, pour continuez vous devez vous authentifier </pre>
+	{% endif %}
+
+{% endblock %}
+

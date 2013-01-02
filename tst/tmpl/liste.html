@@ -1,0 +1,38 @@
+{% extends "tmpl/base.html" %}
+
+{% block content %}
+
+		<!-- <div id="div_table"> -->
+		<div class="Web_OnlineTools_Table" >
+			<table height=200 id="tab_liste">
+			<tr>
+			<td> Code Contact </td> <td>Nom Contact</td> <td>Type de Contact</td><td>Modif</td><td>Effac</td>
+			</tr>
+			{% for obj in objs %}
+			{# Each "obj" is a model object. #}
+				<tr>
+					<td>{{ obj.cod_contact|upper }}</td><td>{{ obj.nom_contact }}</td><td>{{ obj.typ_contact }}</td>
+					<td align="center"><a href="/tst/mo/{{obj.id}}"><img src='/static/img/modif.png'></a></td>
+					<td align="center"><a href="/tst/del/{{obj.id}}"><img src='/static/img/delete.png'></a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<!-- </div> -->
+{% endblock %}
+
+		{% block pagine %}
+			<ul id="menu-bar">
+			{% if objs.has_previous %}
+				<li><a href="?page={{ objs.previous_page_number }}">previous</a></li>
+			{% endif %}
+
+				<li><p>Page {{ objs.number }} of {{ objs.paginator.num_pages }}.<p></li>
+
+			{% if objs.has_next %}
+				<li><a href="?page={{ objs.next_page_number }}">next</a></li>
+			{% endif %}
+			</ul>
+		{% endblock %}
+
+

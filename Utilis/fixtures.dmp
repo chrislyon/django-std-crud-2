@@ -1,0 +1,12 @@
+[
+	{"pk": 1, "model": "Utilis.entiteclass", "fields": {"typent": "ROOT", "codent": "SRA", "description": "ROOT", "noment": "SRA INFORMATIQUE"}},
+	{"pk": 2, "model": "Utilis.entiteclass", "fields": {"typent": "TIERS", "codent": "CLI1", "description": "Client 1", "noment": "CLIENT1"}},
+	{"pk": 3, "model": "Utilis.entiteclass", "fields": {"typent": "TIERS", "codent": "CLI2", "description": "Client No 2", "noment": "CLIENT 2"}},
+	{"pk": 4, "model": "Utilis.entiteclass", "fields": {"typent": "TIERS", "codent": "CLI3", "description": "Client No 3", "noment": "CLIENT 3"}},
+	{"pk": 1, "model": "Utilis.userprofile", "fields": {"tiers": 1, "user": 2}},
+	{"pk": 2, "model": "Utilis.userprofile", "fields": {"tiers": 1, "user": 3}},
+	{"pk": 3, "model": "Utilis.userprofile", "fields": {"tiers": 2, "user": 4}},
+	{"pk": 4, "model": "Utilis.userprofile", "fields": {"tiers": 2, "user": 5}},
+	{"pk": 5, "model": "Utilis.userprofile", "fields": {"tiers": 3, "user": 6}},
+	{"pk": 6, "model": "Utilis.userprofile", "fields": {"tiers": 4, "user": 7}}
+]

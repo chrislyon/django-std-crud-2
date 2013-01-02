@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> {% block title %} 
+	{% if TITRE_PAGE %}
+	{{ TITRE_PAGE }}
+	{% else %}
+		"TITRE DE LA PAGE"
+	{% endif %}
+{% endblock %} </title>
+
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+{% block style %}
+	<link rel="stylesheet" href="/static/style/css/base.css" />
+	<link rel="stylesheet" href="/static/style/form_style.css" />
+	<link rel="stylesheet" href="/static/style/menu_bar.css" />
+	<link rel="stylesheet" href="/static/style/logo.css" />
+	<link rel="stylesheet" href="/static/style/table.css" />
+	<!-- <link rel="stylesheet" href="/static/style/style.css" /> -->
+{% endblock %}
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="headerwrap">
+        <div id="header">
+			{% block logo %}
+			<div class="Web_OnlineTools_Logo" style="float: left; padding:20px;">
+			<h1 id="header1_logo">File eXchange</h1>
+			<h2 id="header2_logo">Echanges de Fichiers</h2>
+			</div>
+			{% endblock %}
+			{% block header %}
+				<div style="display: block; position:relative; top:40%; left:2%;" >
+				<h1>
+				{% if TITRE_PAGE %}
+					{{ TITRE_PAGE }}
+				{% else %}
+					"TITRE DE LA PAGE"
+				{% endif %}
+				</h1>
+				</div>
+			{% endblock %}
+        </div>
+        </div>
+		{% block nav %}
+			<div id="navigationwrap">
+			<div id="navigation">
+					{% if menu_items %}
+					<ul id="menu-bar">
+					{% for item, label, sub_menu in menu_items %}
+						<li> <a href="{{ item }}">{{ label }}</a> 
+							{% if sub_menu %}
+								<ul>
+								{% for i2, l2 in sub_menu %}
+								<li> <a href="{{ i2 }}">{{ l2 }}</a> </li>
+								{% endfor %}
+								</ul>
+							{% endif %}
+						</li>
+					{% endfor %}
+					</ul>
+					{% endif %}
+			</div>
+			</div>
+		{% endblock %}
+        <div id="contentwrap">
+        <div id="content">
+			{% block content %}
+			<!-- CONTENT -->
+			{% endblock %}
+        </div>
+        </div>
+
+        <div id="pagwrap">
+        <div id="pagine">
+			{% block pagine %}
+			<!-- CONTENT -->
+			{% endblock %}
+        </div>
+        </div>
+
+        <div id="footerwrap">
+        <div id="footer">
+			{% block footer %}
+				{% if PUB_DATE %}
+				<div id="pubdate">
+				Date du publication : {{ PUB_DATE }}
+				</div>
+				<time datetime="{{ PUB_DATE }}" pubdate="pubdate"></time>
+				{% endif %}
+			{% endblock %}
+        </div>
+        </div>
+    </div>
+</body>
+</html>
