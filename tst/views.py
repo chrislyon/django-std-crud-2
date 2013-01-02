@@ -22,10 +22,10 @@ def index(request):
 ## Creation 
 ## --------------
 @login_required(login_url='/cnx/login/')
-def tst_create(request):
+def tst_create(request, form, template):
 	if request.method == 'POST':
 		if request.POST['VALID'] == 'VALID':
-			f = ContactForm(request.POST)
+			f = form(request.POST)
 			if f.is_valid():
 				f.save()
 				return HttpResponseRedirect('/tst/cr')
@@ -34,19 +34,19 @@ def tst_create(request):
 			## Bouton ANNUL
 			return HttpResponseRedirect('/tst')
 	else:
-		f = ContactForm()
+		f = form()
 
-	return render( request, 'tst/tmpl/tst_form.html', { 'form' : f, 'TITRE_PAGE':'NOUVEAU CONTACT', 'PUB_DATE':get_pub_date() } ) 
+	return render( request, template, { 'form' : f, 'TITRE_PAGE':'NOUVEAU CONTACT', 'PUB_DATE':get_pub_date() } ) 
 
 ## --------------
 ## Modification
 ## --------------
 @login_required(login_url='/cnx/login/')
-def tst_modif(request, enreg_id):
+def tst_modif(request, enreg_id, model, form, template):
 	if request.method == 'POST':
 		if request.POST['VALID'] == 'VALID':
-			a = Contact.objects.get(id=enreg_id)
-			f = ContactForm(request.POST, instance=a)
+			a = model.objects.get(id=enreg_id)
+			f = form(request.POST, instance=a)
 			if f.is_valid():
 				f.save()
 				return HttpResponseRedirect('/tst')
@@ -54,33 +54,33 @@ def tst_modif(request, enreg_id):
 			## Bouton ANNUL
 			return HttpResponseRedirect('/tst')
 	else:
-		a = Contact.objects.get(pk=enreg_id)
-		f = ContactForm(instance=a)
+		a = model.objects.get(pk=enreg_id)
+		f = form(instance=a)
 
-	return render( request, 'tst/tmpl/tst_form.html', { 'form' : f, 'TITRE_PAGE':'MODIFICATION CONTACT', 'ENREG':enreg_id, 'PUB_DATE':get_pub_date() } )
+	return render( request, template, { 'form' : f, 'TITRE_PAGE':'MODIFICATION CONTACT', 'ENREG':enreg_id, 'PUB_DATE':get_pub_date() } )
 
 ## --------------
 ## Effacement
 ## --------------
 @login_required(login_url='/cnx/login/')
-def tst_delete(request, enreg_id):
+def tst_delete(request, enreg_id, model, template):
 	if request.method == 'POST':
 		if request.POST['VALID'] == 'VALID':
-			a = Contact.objects.get(id=enreg_id).delete()
+			a = model.objects.get(id=enreg_id).delete()
 			return HttpResponseRedirect('/tst')
 		else:
 			## Bouton ANNUL
 			return HttpResponseRedirect('/tst')
 	else:
-		obj = Contact.objects.get(pk=enreg_id)
+		obj = model.objects.get(pk=enreg_id)
 
-	return render( request, 'tst/tmpl/tst_delete.html', { 'obj' : obj, 'TITRE_PAGE':'ANNULATION CONTACT', 'PUB_DATE':get_pub_date() } )
+	return render( request, template, { 'obj' : obj, 'TITRE_PAGE':'ANNULATION CONTACT', 'PUB_DATE':get_pub_date() } )
 
 ## --------------------------------
 ## Liste Standard avec pagination
 ## --------------------------------
 @login_required(login_url='/cnx/login/')
-def std_liste(request, model, template, base_href, p=10):
+def std_liste(request, model, template, p=10):
 
 	T = "LISTE DES CONTACTS"
 	menu = set_menu( 'HOME', 'TST', 'LOGOUT', 'ABOUT', 'CONTACT_US')
@@ -97,5 +97,5 @@ def std_liste(request, model, template, base_href, p=10):
 		# If page is out of range (e.g. 9999), deliver last page of results.
 		objs = paginator.page(paginator.num_pages)
 
-	return render_to_response(template, {'TITRE_PAGE':T, "objs": objs, 'B_HREF':base_href, 'menu_items':menu, 'PUB_DATE':get_pub_date() })
+	return render_to_response(template, {'TITRE_PAGE':T, "objs": objs, 'menu_items':menu, 'PUB_DATE':get_pub_date() })
 
