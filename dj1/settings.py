@@ -1,5 +1,6 @@
 # Django settings for dj1 project.
 import os
+import django.conf.global_settings as DEFAULT_SETTINGS
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

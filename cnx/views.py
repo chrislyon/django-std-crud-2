@@ -33,7 +33,7 @@ def login_view(request):
 	else:
 		form = LoginForm()
 
-	return render( request, 'cnx/tmpl/login.html', { 'form' : form, 'menu_items':menu } )
+	return render( request, 'cnx/tmpl/login.html', { 'form' : form, 'menu_items':menu , 'TITRE_PAGE':'Connexion', } )
 
 
 def logout_view(request):
