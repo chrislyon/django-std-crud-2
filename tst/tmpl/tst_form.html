@@ -1,5 +1,29 @@
 {% extends "tmpl/base.html" %}
 
+{% block scripts %}
+<script>
+var workIsDone = false;
+
+window.onbeforeunload = confirmBrowseAway;
+
+function confirmBrowseAway()
+{
+  if (!workIsDone) {
+      return "Etes vous sur de faire ça ? Si vous quittez cette page " +
+	      "maintenant, votre travail ne sera PAS sauvegardé !";
+	}
+}
+
+function Ok_WorkisDone()
+{
+	// The user has finished their work, so we don't
+	// need a warning anymore!
+	workIsDone = true;
+}
+</script>
+
+{% endblock %}
+
 {% block nav %}
 <p />
 {% endblock %}
@@ -28,9 +52,9 @@
     <fieldset>
     <table>
     <tr><td>
-    <button type="submit" name="VALID" value="VALID"/> Validation </button>
+    <button type="submit" name="VALID" value="VALID" onclick="Ok_WorkisDone()" /> Validation </button>
     </td> <td>
-    <button type="submit" name="VALID" value="ANNUL"/> Annulation </button>
+    <button type="submit" name="VALID" value="ANNUL" onclick="Ok_WorkisDone()" /> Annulation </button>
     </td></tr>
     </table>
     </fieldset>
