@@ -83,7 +83,7 @@ def tst_delete(request, enreg_id, model, template):
 def std_liste(request, model, template, p=10):
 
 	T = "LISTE DES CONTACTS"
-	menu = set_menu( 'HOME', 'TST', 'LOGOUT', 'ABOUT', 'CONTACT_US')
+	menu = set_menu( 'HOME', 'FX', 'TST', 'LOGOUT', 'ABOUT', 'CONTACT_US')
 	obj_list = model.objects.all()
 	paginator = Paginator(obj_list, p)
 

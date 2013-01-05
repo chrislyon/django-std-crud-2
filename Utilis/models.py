@@ -29,3 +29,10 @@ class UserProfile(models.Model):
 
 	def __unicode__(self):
 		return "%s : %s" % (self.user, self.tiers)
+
+	@property
+	def list_name(self):
+		t = EntiteClass.objects.get(id=self.tiers)
+		u = User.objects.get(id=self.user)
+		l_name = "%s - %s" % (u.username, t.noment)
+		return "%s" % l_name

@@ -24,7 +24,7 @@ def login_view(request):
 			if user is not None:
 				login(request, user)
 				# Redirect to a success page.
-				return HttpResponseRedirect('/tst')
+				return HttpResponseRedirect('/')
 			else:
 				form._errors["username"] = ErrorList([u"Acces Denied"])
 		else:

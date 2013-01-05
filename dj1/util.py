@@ -5,10 +5,10 @@ import pdb
 MENU = {
 	'HOME' : ('/', 'Accueil', None ),
 	'TST' : ('/tst', 'Dev_Test', (( '/tst/cr', 'Nouveau Contact'), ('/tst', 'Liste'), )),
+	'FX' : ('/fx', 'FileXchange', (( '/fx/Upload', 'Upload File(s)'), ('/fx/download', 'Download File(s)'), )),
 	'LOGIN' : ('/cnx/login', 'Connexion', None),
 	'LOGOUT' : ('/cnx/logout', 'Déconnexion', None),
-	'ABOUT' : ('/about', 'A propos', None),
-	'CONTACT_US' : ('/contact_us', 'Nous Contactez', None),
+	'ABOUT' : ('/about', 'A propos', (( '/about', 'A propos'),('/contact_us', 'Nous Contactez') )),
 }
 
 def get_pub_date():

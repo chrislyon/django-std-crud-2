@@ -13,12 +13,12 @@ def hello(request):
     return HttpResponse("Hello, world.")
 
 def about(request):
-	menu = set_menu( 'HOME', 'ABOUT', 'CONTACT_US' )
+	menu = set_menu( 'HOME', 'ABOUT')
 	T = "A propos"
 	return render_to_response('tmpl/about.html', {'TITRE_PAGE':T, 'menu_items' : menu , 'PUB_DATE':get_pub_date() })
 
 def contact_us(request):
-	menu = set_menu( 'HOME', 'ABOUT', 'CONTACT_US' )
+	menu = set_menu( 'HOME', 'ABOUT')
 	T = "Contactez Nous"
 	return render_to_response('tmpl/contact_us.html', {'TITRE_PAGE':T, 'menu_items' : menu, 'PUB_DATE':get_pub_date() })
 
@@ -27,11 +27,11 @@ def index(request):
 	if request.user.is_authenticated():
 		titre = "WELCOME %s" % request.user
 		USER = request.user
-		menu = set_menu( 'HOME', 'TST', 'LOGOUT', 'ABOUT', 'CONTACT_US' )
+		menu = set_menu( 'HOME', 'FX', 'TST', 'LOGOUT', 'ABOUT' )
 	else:
 		titre = "WELCOME"
 		USER = None
-		menu = set_menu( 'HOME', 'LOGIN', 'ABOUT', 'CONTACT_US' )
+		menu = set_menu( 'HOME', 'LOGIN', 'ABOUT' )
 
 	return render_to_response(t, { 'menu_items':menu, 'USER':USER, 'TITRE_PAGE':titre, 'PUB_DATE':get_pub_date() })
 

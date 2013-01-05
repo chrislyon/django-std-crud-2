@@ -26,6 +26,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
 	## Pour Test
+    url(r'^fx/', include('fx.urls')),
+
+	## Pour Test
     url(r'^tst/', include('tst.urls')),
 
 )
