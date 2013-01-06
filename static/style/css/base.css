@@ -121,4 +121,5 @@ table#tab_liste th {
 	font-family:Comic Sans MS;
 	font-weight:bold;
 	color: #FFFFFF;
+	vertical-align:middle;
 }
