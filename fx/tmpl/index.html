@@ -1,0 +1,21 @@
+{% extends "tmpl/base.html" %}
+
+{% block content %}
+
+	{% if USER %}
+		<table>
+		<tr> <td colspan="2"> Bienvenue {{ USER }} </td> </tr>
+		<tr><td> <pre>             </pre></td></tr>
+		<tr > 
+			<td> <a href="/fx/upload"> File(s) to Upload </a></td>
+			<td> <pre>             </pre></td>
+			<td> <a href="/fx/download"> File(s) to download </a></td>
+		</tr>
+		</table>
+
+	{% else %}
+		<pre> Welcome, pour continuez vous devez vous authentifier </pre>
+	{% endif %}
+
+{% endblock %}
+
