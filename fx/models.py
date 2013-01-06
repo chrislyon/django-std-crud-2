@@ -4,6 +4,7 @@ from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
 
 from Utilis.models import UserProfile, EntiteClass
+from django.contrib.auth.models import User
 
 FX_STATUS = (
 	( 'INIT', 'INITIAL'),
@@ -22,8 +23,8 @@ class FileXchange(models.Model):
 	nom_fx = models.CharField(_(u'Nom Fx'),max_length=40)
 	description = models.TextField(_(u'Description'), blank=True)
 	fx_sens = models.CharField(_(u'Sens Fx'),max_length=5, choices=FX_SENS, default='RECV')
-	from_user = models.ForeignKey(UserProfile, related_name='+')
-	to_user = models.ForeignKey(UserProfile, related_name='+')
+	from_user = models.ForeignKey(User, related_name='+')
+	to_user = models.ForeignKey(User, related_name='+')
 	fx_status = models.CharField(_(u'Status Fx'),max_length=10, choices=FX_STATUS, default='INIT')
 	Original_name = models.CharField(_(u'Nom Origine'),max_length=40, blank=True)
 	Destination_name = models.CharField(_(u'Nom Destination'),max_length=40, blank=True)
@@ -34,15 +35,13 @@ class FileXchange(models.Model):
 
 	@property
 	def from_user_list_name(self):
-		t = self.from_user.tiers.noment
-		u = self.from_user.user.username
-		return "%s : %s" % (u,t)
+		u = self.from_user.get_profile()
+		return "%s : %s" % (u.tiers.noment, self.from_user.username)
 
 	@property
 	def to_user_list_name(self):
-		t = self.to_user.tiers.noment
-		u = self.to_user.user.username
-		return "%s : %s" % (u,t)
+		u = self.to_user.get_profile()
+		return "%s : %s" % (u.tiers.noment, self.to_user.username)
 
 class FxForm(ModelForm):
 	class Meta:
