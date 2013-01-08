@@ -25,10 +25,13 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
-	## Pour Test
+	## Gestion des fichiers Xchange
     url(r'^fx/', include('fx.urls')),
 
 	## Pour Test
     url(r'^tst/', include('tst.urls')),
+
+	## Pour Test
+    url(r'^contact/', include('contact.urls')),
 
 )

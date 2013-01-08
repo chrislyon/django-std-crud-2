@@ -143,6 +143,7 @@ INSTALLED_APPS = (
 	'Utilis',
 	'tst',
 	'fx',
+	'contact',
 	'south',
 	'debug_toolbar',
 )

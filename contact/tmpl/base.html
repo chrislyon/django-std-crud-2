@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> {% block title %} 
+	{% if TITRE_PAGE %}
+	{{ TITRE_PAGE }}
+	{% else %}
+		"TITRE DE LA PAGE"
+	{% endif %}
+{% endblock %} </title>
+
+{% block style %}
+	<link rel="stylesheet" href="/static/contact/style/base.css" />
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+</head>
+<body>
+        <div id="header">
+			{% block logo %}
+                LOGO
+            {% endblock %}
+
+			{% block header %}
+				<div>
+				<h1>
+				{% if TITRE_PAGE %}
+					{{ TITRE_PAGE }}
+				{% else %}
+					"TITRE DE LA PAGE"
+				{% endif %}
+				</h1>
+				</div>
+			{% endblock %}
+        </div>
+
+		{% block nav %}
+			<div id="navigation">
+					{% if menu_items %}
+					<ul id="menu-bar">
+					{% for item, label, sub_menu in menu_items %}
+						<li> <a href="{{ item }}">{{ label }}</a> 
+							{% if sub_menu %}
+								<ul>
+								{% for i2, l2 in sub_menu %}
+								<li> <a href="{{ i2 }}">{{ l2 }}</a> </li>
+								{% endfor %}
+								</ul>
+							{% endif %}
+						</li>
+					{% endfor %}
+					</ul>
+					{% endif %}
+			</div>
+		{% endblock %}
+
+        <div id="content">
+			{% block content %}
+			<!-- CONTENT -->
+			{% endblock %}
+        </div>
+
+        <div id="pagine">
+			{% block pagine %}
+			<!-- CONTENT -->
+			{% endblock %}
+        </div>
+
+        <div id="footer">
+			{% block footer %}
+				{% if PUB_DATE %}
+				<div id="pubdate">
+				Date du publication : {{ PUB_DATE }}
+				</div>
+				<time datetime="{{ PUB_DATE }}" pubdate="pubdate"></time>
+				{% endif %}
+			{% endblock %}
+        </div>
+</body>
+</html>

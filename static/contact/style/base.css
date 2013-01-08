@@ -1,0 +1,23 @@
+body {
+width:1000px;
+}
+
+header {
+    border: 1px solid red;
+}
+
+navigation {
+    border: 1px solid black;
+}
+
+#content {
+}
+
+pagine{
+    border: 1px solid green;
+}
+
+footer{
+    border: 1px solid black;
+}
+
