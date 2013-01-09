@@ -2,22 +2,57 @@ body {
 width:1000px;
 }
 
-header {
+#header {
     border: 1px solid red;
 }
 
-navigation {
+ul#logo_titre,
+ul#logo_titre li {
+    /* Setting a common base */
+    margin: 0;
+    padding: 0;
+}
+
+ul#logo_titre li:first-child {
+    display: inline-block;
+    width: 20%;
+    min-height: 100px;
+    background: #fcc;
+    vertical-align: middle;
+    text-align: center;
+}
+
+ul#logo_titre li {
+    display: inline-block;
+    width: 60%;
+    min-height: 100px;
+    background: #ccc;
+    vertical-align: middle;
+}
+
+ul#logo_titre li:last-child {
+    display: inline-block;
+    width: 10%;
+    min-height: 100px;
+    background: #fcf;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+#navigation {
     border: 1px solid black;
 }
 
 #content {
+    border: 1px solid black;
 }
 
-pagine{
+#pagine{
     border: 1px solid green;
 }
 
-footer{
+#footer{
     border: 1px solid black;
 }
 

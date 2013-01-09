@@ -20,12 +20,15 @@
 </head>
 <body>
         <div id="header">
-			{% block logo %}
-                LOGO
-            {% endblock %}
+            <ul id="logo_titre">
+                <li>
+                    {% block logo %}
+                        LOGO
+                    {% endblock %}
+                </li>
 
 			{% block header %}
-				<div>
+                <li>
 				<h1>
 				{% if TITRE_PAGE %}
 					{{ TITRE_PAGE }}
@@ -33,8 +36,14 @@
 					"TITRE DE LA PAGE"
 				{% endif %}
 				</h1>
-				</div>
+                </li>
 			{% endblock %}
+			{% block header_droit %}
+                <li>
+                    <p> HD </p>
+                </li>
+			{% endblock %}
+            </ul>
         </div>
 
 		{% block nav %}
