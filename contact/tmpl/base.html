@@ -20,8 +20,8 @@
 
 </head>
 <body>
-	<div id="page">
-        <div id="header">
+	<div id="contenu">
+        <div id="bandeau">
             <ul id="logo_titre">
                 <li>
                     {% block logo %}
@@ -50,7 +50,7 @@
         </div>
 
 		{% block nav %}
-			<div id="navigation">
+			<div id="menu">
 					{% if menu_items %}
 					<ul id="menu-bar">
 					{% for item, label, sub_menu in menu_items %}
@@ -69,14 +69,11 @@
 			</div>
 		{% endblock %}
 
-		<div id="vcontainer">
-		<div id="hcontainer">
-		<div id="content">
+		<div id="wrapper_content">
 			{% block content %}
 			<!-- CONTENT -->
 			{% endblock %}
-        </div>
-		</div>
+			<div id="contenudroite"></div> </div>
 		</div>
 
 			{% block pagine %}
@@ -95,6 +92,5 @@
 				{% endif %}
 			</div>
 		{% endblock %}
-	</div>
 </body>
 </html>

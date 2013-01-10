@@ -2,11 +2,10 @@
 
 {% block content %}
 
-		<!-- <div id="div_table"> -->
-		<div class="Liste_Table" >
-			<table height=200 id="tab_liste">
+			<div id="contenu_fiche">
+			<table id="table_liste">
 			<tr>
-			<td> Code Contact </td> <td>Nom Contact</td> <td>Type de Contact</td><td>Modif</td><td>Effac</td>
+			<th> Code Contact </th> <th>Nom Contact</th> <th>Type de Contact</th><th>Modif</th><th>Effac</th>
 			</tr>
 			{% for obj in objs %}
 			{# Each "obj" is a model object. #}
@@ -15,10 +14,10 @@
 					<td align="center"><a href="/tst/mo/{{obj.id}}"><img src='/static/img/modif.png'></a></td>
 					<td align="center"><a href="/tst/del/{{obj.id}}"><img src='/static/img/delete.png'></a></td>
 				</tr>
-				{% endfor %}
+			{% endfor %}
 			</table>
-		</div>
-		<!-- </div> -->
+			</div>
+
 {% endblock %}
 
 {% block pagine %}
