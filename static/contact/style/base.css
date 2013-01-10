@@ -1,9 +1,31 @@
-body {
-width:1000px;
+/* ------------------- */
+/* CSS DE BASE         */
+/* ------------------- */
+
+html {
+	height: 100%;
 }
 
+body {
+	width:1000px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* ------------------- */
+/* GESTION DE l'entete */
+/* ------------------- */
+
 #header {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    min-height: 75px;
+    max-height: 100px;
+}
+
+h1#titre {
+    /* border: 1px dotted black; */
+	text-align: center;
 }
 
 ul#logo_titre,
@@ -16,8 +38,7 @@ ul#logo_titre li {
 ul#logo_titre li:first-child {
     display: inline-block;
     width: 20%;
-    min-height: 100px;
-    background: #fcc;
+    /* background: #fcc; */
     vertical-align: middle;
     text-align: center;
 }
@@ -25,34 +46,114 @@ ul#logo_titre li:first-child {
 ul#logo_titre li {
     display: inline-block;
     width: 60%;
-    min-height: 100px;
-    background: #ccc;
     vertical-align: middle;
+    background: #ccc;
 }
 
 ul#logo_titre li:last-child {
     display: inline-block;
-    width: 10%;
-    min-height: 100px;
+	/* Si 20% alors il passe ne dessous */
+    width: 18%;
     background: #fcf;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* --------------------------- */
+/* GESTION DE LA BARRE DE MENU */
+/* --------------------------- */
+
+#navigation {
+    /* border: 1px solid black; */
+	max-height: 40px;
+}
+
+/* --------------------------- */
+/* GESTION DE ZONE ARTICLE     */
+/* --------------------------- */
+
+#vcontainer {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+#hcontainer {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#content {
+	display: inline-block;
+	border: lightGray 1px solid;
+	background-color: lightBlue;
+	text-align: left;
+	height: auto !important;
+	min-height: 100%;
+	height:100%;
+}
+
+/* 
+#content {
+     border: 1px dotted black;
+	height: auto !important;
+	min-height: 340px;
+	min-height: 100%;
+}
+*/
+
+
+/* --------------------------- */
+/* GESTION DE LA PAGINATION */
+/* --------------------------- */
+
+#paginator{
+    /* border: 1px solid red; */
+    min-height: 35px;
+    max-height: 50px;
+}
+
+ul#pagine,
+ul#pagine li {
+    /* Setting a common base */
+    margin: 0;
+    padding: 0;
+}
+
+ul#pagine li:first-child {
+    display: inline-block;
+    width: 20%;
+    background: #fcc; */
     vertical-align: middle;
     text-align: center;
 }
 
-
-#navigation {
-    border: 1px solid black;
+ul#pagine li {
+    display: inline-block;
+    width: 60%;
+    vertical-align: middle;
+    background: #ccc;
 }
 
-#content {
-    border: 1px solid black;
-}
-
-#pagine{
-    border: 1px solid green;
+ul#pagine li:last-child {
+    display: inline-block;
+	/* Si 20% alors il passe ne dessous */
+    width: 18%;
+    background: #fcf;
+    text-align: center;
+    vertical-align: middle;
 }
 
 #footer{
-    border: 1px solid black;
+    /*border: 1px solid red; */
+    background: #ccc;
+	height: auto !important;
+	height: 34px;
+}
+
+
+#pub_date{
+    /* text-align: center; */
+    /* vertical-align: middle; */
 }
 

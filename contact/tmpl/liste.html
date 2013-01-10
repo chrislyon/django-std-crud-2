@@ -21,18 +21,24 @@
 		<!-- </div> -->
 {% endblock %}
 
-		{% block pagine %}
-			<ul id="menu-bar">
-			{% if objs.has_previous %}
-				<li><a href="?page={{ objs.previous_page_number }}">previous</a></li>
-			{% endif %}
-
-				<li><p>Page {{ objs.number }} of {{ objs.paginator.num_pages }}.<p></li>
-
-			{% if objs.has_next %}
-				<li><a href="?page={{ objs.next_page_number }}">next</a></li>
-			{% endif %}
-			</ul>
-		{% endblock %}
+{% block pagine %}
+	<div id="paginator">
+	<ul id="pagine">
+		{% if objs.has_previous %}
+			<li>
+				<a href="?page={{ objs.previous_page_number }}">previous</a>
+			</li>
+		{% endif %}
+			<li>
+				<p>Page {{ objs.number }} / {{ objs.paginator.num_pages }}.<p>
+			</li>
+		{% if objs.has_next %}
+			<li>
+				<a href="?page={{ objs.next_page_number }}">next</a>
+			</li>
+		{% endif %}
+	</ul>
+	</div>
+{% endblock %}
 
 

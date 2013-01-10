@@ -12,6 +12,7 @@
 
 {% block style %}
 	<link rel="stylesheet" href="/static/contact/style/base.css" />
+	<link rel="stylesheet" href="/static/contact/style/menu_bar.css" />
 {% endblock %}
 
 {% block scripts %}
@@ -19,17 +20,18 @@
 
 </head>
 <body>
+	<div id="page">
         <div id="header">
             <ul id="logo_titre">
                 <li>
                     {% block logo %}
-                        LOGO
+					<img src='/static/img/LOGO.png'>
                     {% endblock %}
                 </li>
 
 			{% block header %}
                 <li>
-				<h1>
+				<h1 id="titre">
 				{% if TITRE_PAGE %}
 					{{ TITRE_PAGE }}
 				{% else %}
@@ -40,7 +42,8 @@
 			{% endblock %}
 			{% block header_droit %}
                 <li>
-                    <p> HD </p>
+                    <p> Connexion </p>
+                    <p> Deconnexion </p>
                 </li>
 			{% endblock %}
             </ul>
@@ -66,27 +69,32 @@
 			</div>
 		{% endblock %}
 
-        <div id="content">
+		<div id="vcontainer">
+		<div id="hcontainer">
+		<div id="content">
 			{% block content %}
 			<!-- CONTENT -->
 			{% endblock %}
         </div>
+		</div>
+		</div>
 
-        <div id="pagine">
 			{% block pagine %}
-			<!-- CONTENT -->
+			<!-- PAGINATION -->
+			<div> </div>
 			{% endblock %}
-        </div>
 
-        <div id="footer">
-			{% block footer %}
+		{% block footer %}
+			<div id="footer">
+				<div> </div>
 				{% if PUB_DATE %}
-				<div id="pubdate">
+				<p id="pub_date">
 				Date du publication : {{ PUB_DATE }}
-				</div>
+				</p>
 				<time datetime="{{ PUB_DATE }}" pubdate="pubdate"></time>
 				{% endif %}
-			{% endblock %}
-        </div>
+			</div>
+		{% endblock %}
+	</div>
 </body>
 </html>

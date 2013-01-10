@@ -10,12 +10,27 @@ from django.http import HttpResponse
 
 from dj1.util import get_pub_date, set_menu
 
+from contact.models import Contact
+
 BASE_RETOUR = '/contact/'
 
 T_LISTE = 'Liste des Contacts'
 T_MODIF = "Modification d'un contact"
 T_CREATE = "Nouveau Contact"
 T_ANNUL = "Annulation d'un Contact"
+
+def populate(request):
+	nb = 0
+	for x in xrange(1,50):
+		a = Contact()
+		a.cod_contact = "COD%03d" % x
+		a.nom_contact = "CONTACT No %03d" % x
+		a.save()
+		nb += 1
+
+	return HttpResponse(" POPULATE OK %s " % nb)
+
+		
 
 ## --------------
 ## Creation 
@@ -92,4 +107,3 @@ def liste(request, model, template, p=10):
 		objs = paginator.page(paginator.num_pages)
 
 	return render_to_response(template, {'TITRE_PAGE':T_LISTE, "objs": objs, 'menu_items':menu, 'PUB_DATE':get_pub_date() })
-

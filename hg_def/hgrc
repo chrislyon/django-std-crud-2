@@ -1,0 +1,5 @@
+[paths]
+default = https://chris.lyon.tech@code.google.com/p/django-std-crud-2/
+
+[ui]
+username = chris.lyon.tech@gmail.com
