@@ -76,14 +76,14 @@
 			<div id="contenudroite"></div> </div>
 		</div>
 
-			{% block pagine %}
-			<!-- PAGINATION -->
-			<div> </div>
-			{% endblock %}
-
 		{% block footer %}
 			<div id="footer">
+
+				{% block pagine %}
+				<!-- PAGINATION -->
 				<div> </div>
+				{% endblock %}
+
 				{% if PUB_DATE %}
 				<p id="pub_date">
 				Date du publication : {{ PUB_DATE }}

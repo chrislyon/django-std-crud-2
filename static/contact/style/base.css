@@ -6,6 +6,7 @@ body {
 div {
 	text-align: center;
 }
+
 #contenu {
 	width: 988px;
 	margin: 0 auto;
@@ -104,6 +105,12 @@ div#contenudroite {
 	background-color: #CCCCCC;
 }
 
+div#footer {
+	float: none;
+	width: 770px;
+	background: #fcc;
+}
+
 /* --------------------------- */
 /* GESTION DE LA PAGINATION */
 /* --------------------------- */
@@ -145,10 +152,3 @@ ul#pagine li:last-child {
     vertical-align: middle;
 }
 
-
-
-div#footer {
-	width: 770px;
-	display: inline;
-	background-color: red;
-}
