@@ -1,6 +1,7 @@
 * {margin:0;    padding:0;}
+
 body {
-	background:#fff url(commun/carbon-fiber.jpg) top;
+	background:#fff;
 }
 
 div {
@@ -13,7 +14,8 @@ div {
 }
 
 #bandeau {
-	background-color: #FFCC33;
+	/* background-color: #FFCC33; */
+	background-color: #0054A8;
 }
 
 h1#titre {
@@ -40,21 +42,21 @@ ul#logo_titre li {
     display: inline-block;
     width: 60%;
     vertical-align: middle;
-    background: #ccc;
+    /* background: #ccc; */
 }
 
 ul#logo_titre li:last-child {
     display: inline-block;
 	/* Si 20% alors il passe ne dessous */
     width: 18%;
-    background: #fcf;
+	background-color: #0054A8;
     text-align: center;
     vertical-align: middle;
 }
 
 
 #menu {
-	background: teal;
+	background-color:#0054A8;
 	height: 40px;
 	border :1px solid #000;
 }
@@ -62,40 +64,50 @@ ul#logo_titre li:last-child {
 #wrapper_content {
 	overflow: hidden;
 	zoom: 1;
+	height: 380px;
 }
 
+/*-------*/
+/* Table */
+/*-------*/
 
 #table_liste
 {
-font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-width:100%;
-border-collapse:collapse;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	width:100%;
+	border-collapse:collapse;
 }
 #table_liste td, #table_liste th 
 {
-font-size:1em;
-border:1px solid #98bf21;
-padding:3px 7px 2px 7px;
+	font-size:1em;
+	/* border:1px solid #98bf21; */
+	border:1px solid #08088A;
+	padding:3px 7px 2px 7px;
 }
 #table_liste th 
 {
-font-size:1.1em;
-text-align:left;
-padding-top:5px;
-padding-bottom:4px;
-background-color:#A7C942;
-color:#ffffff;
+	font-size:1.1em;
+	text-align:left;
+	padding-top:5px;
+	padding-bottom:4px;
+	/*background-color:#A7C942;*/
+	background-color:#5858FA;
+	color:#ffffff;
 }
 #table_liste tr.alt td 
 {
-color:#000000;
-background-color:#EAF2D3;
+	color:#000000;
+	background-color:#EAF2D3;
 }
 
+/* ---------------*/
+/* Zone centrale  */
+/* ---------------*/
 div#contenu_fiche {
 	float: left;
 	width: 770px;
 	background-color: #FFFFFF;
+	min-height:80%;
 	height:80%;
 }
 
@@ -105,10 +117,13 @@ div#contenudroite {
 	background-color: #CCCCCC;
 }
 
-div#footer {
-	float: none;
-	width: 770px;
-	background: #fcc;
+/* ------------- */
+/*  Pied de page */
+/* ------------- */
+#footer {
+	background-color: #0054A8;
+	margin: 0 auto;
+	width: 988px;
 }
 
 /* --------------------------- */
@@ -131,7 +146,6 @@ ul#pagine li {
 ul#pagine li:first-child {
     display: inline-block;
     width: 20%;
-    background: #fcc; */
     vertical-align: middle;
     text-align: center;
 }
@@ -147,7 +161,6 @@ ul#pagine li:last-child {
     display: inline-block;
 	/* Si 20% alors il passe ne dessous */
     width: 18%;
-    background: #fcf;
     text-align: center;
     vertical-align: middle;
 }
