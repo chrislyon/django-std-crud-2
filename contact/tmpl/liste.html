@@ -11,8 +11,8 @@
 			{# Each "obj" is a model object. #}
 				<tr>
 					<td>{{ obj.cod_contact|upper }}</td><td>{{ obj.nom_contact }}</td><td>{{ obj.typ_contact }}</td>
-					<td align="center"><a href="/tst/mo/{{obj.id}}"><img src='/static/img/modif.png'></a></td>
-					<td align="center"><a href="/tst/del/{{obj.id}}"><img src='/static/img/delete.png'></a></td>
+					<td align="center"><a href="/contact/mo/{{obj.id}}"><img src='/static/img/modif.png'></a></td>
+					<td align="center"><a href="/contact/del/{{obj.id}}"><img src='/static/img/delete.png'></a></td>
 				</tr>
 			{% endfor %}
 			</table>
