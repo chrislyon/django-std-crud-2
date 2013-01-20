@@ -4,7 +4,7 @@ import pdb
 
 MENU = {
 	'HOME' : ('/', 'Accueil', None ),
-	'TST' : ('/tst', 'Dev_Test', (( '/tst/cr', 'Nouveau Contact'), ('/tst', 'Liste'), )),
+	'TST' : ('/tst', 'Dev_Test', (( '/tst/cr', 'Nouveau Contact'), ('/tst', 'Liste'), ('/contact', 'Gcontact'), )),
 	'FX' : ('/fx', 'FileXchange', (( '/fx/upload', 'Upload File(s)'), ('/fx/download', 'Download File(s)'), )),
 	'LOGIN' : ('/cnx/login', 'Connexion', None),
 	'LOGOUT' : ('/cnx/logout', 'Déconnexion', None),

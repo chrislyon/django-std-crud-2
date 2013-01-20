@@ -1,0 +1,23 @@
+
+Ajout dans User_profile
+	=> des droits
+	=> Creation d'entite
+	=> Creation d'utilisateurs 
+
+	Seul Admin peut creer des utilisateurs SRA
+
+	Creation d'utilisateur
+	Si Create_entite = OUI
+		alors on peut creer des users avec n'importe quelle entite
+	Sinon juste des utilisateurs avec son entite
+
+Ajouter une fonction pour changer les mots de passe
+
+Ajouter une gestion des Echanges de fichiers 
+	Creation
+	Modification
+	Effacement
+
+Creer une fonction qui purge les echanges termines
+
+Tester les volumes de fichiers
